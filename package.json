@@ -1,4 +1,48 @@
 {
   "name": "employee-management-app",
-  "packageManager": "yarn@4.2.2"
+  "packageManager": "yarn@4.4.0",
+  "scripts": {
+    "build": "tsc",
+    "routes": "tsoa routes",
+    "spec": "tsoa spec",
+    "start": "node dist/index.js",
+    "serve": "yarn routes && yarn spec && ts-node src/index.ts",
+    "dev": "cross-env NODE_ENV=development nodemon --watch src --ignore dist --exec 'ts-node src/index.ts'",
+    "test": "cross-env NODE_ENV=test yarn routes && ts-node src/index.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/eslint": "^9",
+    "@types/express": "^4.17.21",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/node": "^22.5.0",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^8.2.0",
+    "@typescript-eslint/parser": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.9.0",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.2.0"
+  },
+  "dependencies": {
+    "@tsoa/runtime": "^6.4.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "class-validator": "^0.14.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.12.0",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.3",
+    "swagger-ui-express": "^5.0.1",
+    "tsoa": "^6.4.0"
+  }
 }

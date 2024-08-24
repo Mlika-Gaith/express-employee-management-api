@@ -11,3 +11,8 @@
 
 #!.yarn/cache
 .pnp.*
+
+# environment files
+.env.local
+.env.development
+.env.test
